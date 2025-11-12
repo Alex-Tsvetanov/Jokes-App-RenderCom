@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package jokes;
+
+service JokeService {
+  rpc StreamJokes(StreamJokesRequest) returns (stream Joke) {}
+}
+
+message StreamJokesRequest {
+  // Empty request - we'll stream all jokes
+}
+
+message Joke {
+  int32 id = 1;
+  string setup = 2;
+  string punchline = 3;
+}
