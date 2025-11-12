@@ -19,4 +19,7 @@ services:
     staticPublishPath: ./frontend/build
     envVars:
       - key: REACT_APP_BACKEND_URL
-        value: https://jokes-backend-hegi.onrender.com
+        fromService:
+          type: web
+          name: jokes-backend
+          property: host
