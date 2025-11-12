@@ -6,6 +6,7 @@ import './App.css';
 // We'll create a simple HTTP wrapper around the gRPC backend
 
 function App() {
+    console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
     const [currentJoke, setCurrentJoke] = useState(null);
     const [jokes, setJokes] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
